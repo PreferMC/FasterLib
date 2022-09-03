@@ -270,4 +270,4 @@ public class Main extends JavaPlugin {
 }
 ~~~
 
-###### Powered By PreferMC
+###### 由 PreferMC 强力驱动
