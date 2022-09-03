@@ -1,0 +1,4 @@
+name: FasterLib
+author: commandf1
+main: space.commandf1.FasterLib.FasterLib
+version: ${project.version}
