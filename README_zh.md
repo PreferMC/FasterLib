@@ -44,7 +44,7 @@ public class Cmd extends Command {
     }
 }
 ~~~
-**Register commands on onEnable() method**
+**在OnEnable()方法注册上述命令**
 
 ~~~java
 import org.bukkit.plugin.java.JavaPlugin;
