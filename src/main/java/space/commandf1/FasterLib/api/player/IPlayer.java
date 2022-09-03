@@ -2,10 +2,7 @@ package space.commandf1.FasterLib.api.player;
 
 import java.util.*;
 
-import net.minecraft.server.v1_8_R3.*;
 import org.bukkit.Color;
-import org.bukkit.Location;
-import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 
 @SuppressWarnings("unused")
@@ -20,6 +17,8 @@ public class IPlayer {
         return new IPlayer(player);
     }
 
+    // MC BBS不允许的操作
+    /*
     /**
      *
      * 崩溃玩家的客户端
@@ -27,6 +26,7 @@ public class IPlayer {
      * @param packetNum 需要传入包的数量
      * @author commandf1
      * */
+    /*
     public void crashPlayer(int packetNum) {
         if (packetNum <= 0) {
             packetNum = 600;
@@ -48,6 +48,7 @@ public class IPlayer {
      *
      * @author commandf1
      * */
+    /*
     public void crashPlayer() {
         Location location = player.getLocation();
         PacketPlayOutExplosion packetPlayOutExplosion = new PacketPlayOutExplosion(
@@ -60,6 +61,7 @@ public class IPlayer {
         }
     }
 
+     */
     /**
      * 使用十六进制颜色发送消息
      * @author commandf1
