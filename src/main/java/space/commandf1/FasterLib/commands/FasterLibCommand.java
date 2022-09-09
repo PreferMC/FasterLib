@@ -12,7 +12,10 @@ public class FasterLibCommand extends Command {
 
     @Override
     public boolean onExecute(CommandSender commandSender, org.bukkit.command.Command cmd, String label, String[] args) {
-        commandSender.sendMessage("§fFasterLib v§a" + FasterLib.getInstance().getDescription().getVersion() + " §fBy §a" + "commandf1");
+        commandSender.sendMessage(new String[] {
+                "§fFasterLib " + "§fBy §b" + "commandf1",
+                "§aVersion §f-> §c" + FasterLib.getInstance().getDescription().getVersion()
+        });
         return true;
     }
 }
