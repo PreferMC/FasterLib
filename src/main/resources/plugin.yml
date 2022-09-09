@@ -1,4 +1,6 @@
 name: FasterLib
 author: commandf1
+description: A easy lib for developers
+api-version: 1.8.8
 main: space.commandf1.FasterLib.FasterLib
 version: ${project.version}

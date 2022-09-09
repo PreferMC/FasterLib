@@ -1,7 +1,9 @@
 package space.commandf1.FasterLib;
 
 import org.bukkit.plugin.java.JavaPlugin;
+import space.commandf1.FasterLib.api.command.CommandManager;
 import space.commandf1.FasterLib.api.listener.ListenerManager;
+import space.commandf1.FasterLib.commands.FasterLibCommand;
 import space.commandf1.FasterLib.listeners.GUIListener;
 
 import java.util.logging.Logger;
@@ -14,6 +16,7 @@ public class FasterLib extends JavaPlugin {
     public void onEnable() {
         instance = this;
         ListenerManager.registerListeners(this, new GUIListener());
+        CommandManager.registerCommandsWithoutRegisterOnPluginYmlFile(this, new FasterLibCommand());
         logger.info("Plugin loaded successful.");
         logger.info("Made By commandf1 v" + getDescription().getVersion());
     }

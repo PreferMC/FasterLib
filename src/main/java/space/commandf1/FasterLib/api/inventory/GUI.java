@@ -65,10 +65,10 @@ public class GUI {
      *
      * */
     public strictfp void addListener(GUIAction guiAction) {
-        if (GUIListener.actions.stream().anyMatch(i -> i.equals(guiAction))) {
+        if (GUIListener.actions.keySet().stream().anyMatch(i -> i.equals(guiAction))) {
             return;
         }
-        GUIListener.actions.add(guiAction);
+        GUIListener.actions.put(guiAction, this.getInventory());
     }
 
     /**
