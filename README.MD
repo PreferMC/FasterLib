@@ -159,6 +159,7 @@ public class Main extends JavaPlugin {
 ~~~
 
 **Mysql.java Usage**
+**Deleted on 1.5**
 
 ~~~java
 import org.bukkit.plugin.java.JavaPlugin;
