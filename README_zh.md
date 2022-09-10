@@ -271,4 +271,26 @@ public class Main extends JavaPlugin {
 }
 ~~~
 
+**Text.java 使用**
+
+~~~java
+import net.md_5.bungee.api.chat.ClickEvent;
+import net.md_5.bungee.api.chat.HoverEvent;
+import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
+import org.bukkit.plugin.java.JavaPlugin;
+import space.commandf1.FasterLib.api.text.Text;
+
+public class Main extends JavaPlugin {
+
+    @Override
+    public void onEnable() {
+        Player player = Bukkit.getPlayer("player");
+        player.spigot().sendMessage(new Text("Text")
+                .setHoverEvent(HoverEvent.Action.SHOW_TEXT, "text")
+                .setClickEvent(ClickEvent.Action.RUN_COMMAND, "i clicked the text"));
+    }
+}
+~~~
+
 ###### 由 PreferMC 强力驱动
