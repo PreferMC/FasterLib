@@ -1,5 +1,6 @@
 package space.commandf1.FasterLib.listeners;
 
+import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
@@ -23,7 +24,7 @@ public class GUIListener implements Listener {
         }
         for (GUIAction action : actions.keySet()) {
             if (!event.getInventory().getTitle().equals(actions.get(action).getTitle())) {
-                return;
+                continue;
             }
             if (action.getActionType().equals(ActionType.NUM)) {
                 if (event.getRawSlot() == action.getI() && action.getClickType() == null) {

@@ -61,13 +61,9 @@ public class GUI {
 
     /**
      * 添加Listener
-     * 如果有重复项会抛出错误
      *
      * */
     public strictfp void addListener(GUIAction guiAction) {
-        if (GUIListener.actions.keySet().stream().anyMatch(i -> i.equals(guiAction))) {
-            return;
-        }
         GUIListener.actions.put(guiAction, this.getInventory());
     }
 
