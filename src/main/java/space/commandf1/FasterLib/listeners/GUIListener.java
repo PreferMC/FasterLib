@@ -22,7 +22,7 @@ public class GUIListener implements Listener {
             return;
         }
         for (GUIAction action : actions.keySet()) {
-            if (!event.getInventory().equals(actions.get(action))) {
+            if (!event.getInventory().getTitle().equals(actions.get(action).getTitle())) {
                 return;
             }
             if (action.getActionType().equals(ActionType.NUM)) {
