@@ -3,8 +3,12 @@ package space.commandf1.FasterLib.commands;
 import org.bukkit.command.CommandSender;
 import space.commandf1.FasterLib.FasterLib;
 import space.commandf1.FasterLib.api.command.Command;
+import space.commandf1.FasterLib.api.inventory.action.Action;
 import space.commandf1.FasterLib.api.inventory.action.GUIAction;
 import space.commandf1.FasterLib.listeners.GUIListener;
+
+import java.util.HashSet;
+import java.util.Set;
 
 public class FasterLibCommand extends Command {
 
@@ -14,13 +18,17 @@ public class FasterLibCommand extends Command {
 
     @Override
     public boolean onExecute(CommandSender commandSender, org.bukkit.command.Command cmd, String label, String[] args) {
+        Set<Action> actions = new HashSet<>();
+        for (GUIAction guiAction : GUIListener.actions.keySet()) {
+            actions.add(guiAction.getAction());
+        }
         commandSender.sendMessage(new String[] {
                 "§fFasterLib " + "§fBy §b" + "commandf1",
                 "§aVersion §f-> §c" + FasterLib.getInstance().getDescription().getVersion(),
                 "",
                 "§fGUIActions §f-> §b" + GUIListener.actions.keySet().size(),
-                "§fActions §f-> §b" + GUIListener.actions.size(),
-                "§fInventories §f-> §b" + GUIListener.actions.values().size(),
+                "§fActions §f-> §b" + actions.size(),
+                "§fInventories §f-> §b" + new HashSet<>(GUIListener.actions.values()).size(),
                 "",
                 "§aGUIAction Info"
         });
