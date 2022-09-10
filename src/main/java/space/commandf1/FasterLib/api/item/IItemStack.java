@@ -5,6 +5,7 @@ import org.bukkit.enchantments.Enchantment;
 import org.bukkit.enchantments.EnchantmentTarget;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.inventory.meta.SkullMeta;
 
 import java.util.Arrays;
 import java.util.List;
@@ -143,6 +144,21 @@ public class IItemStack {
      **/
     public IItemStack setUnbreakable(boolean b) {
         this.itemMeta.spigot().setUnbreakable(b);
+        return this;
+    }
+
+    /**
+     * 设置头颅主人(前提是物品是SKULL_ITEM)
+     * @author commandf1
+     *
+     * */
+    public IItemStack setOwner(String name) {
+        if (!this.itemStack.getType().equals(Material.SKULL_ITEM)) {
+            return this;
+        }
+        SkullMeta skullMeta = (SkullMeta) this.itemMeta;
+        skullMeta.setOwner(name);
+        this.itemStack.setItemMeta(skullMeta);
         return this;
     }
 
