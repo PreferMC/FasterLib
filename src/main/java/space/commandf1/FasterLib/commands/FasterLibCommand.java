@@ -3,7 +3,6 @@ package space.commandf1.FasterLib.commands;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.HoverEvent;
 import org.bukkit.command.CommandSender;
-import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 import space.commandf1.FasterLib.FasterLib;
 import space.commandf1.FasterLib.api.command.Command;
@@ -21,11 +20,11 @@ public class FasterLibCommand extends Command {
         super("FasterLib", "The main command of the FasterLib plugin.", false, null, null, false, null);
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public boolean onExecute(CommandSender commandSender, org.bukkit.command.Command cmd, String label, String[] args) {
         if (commandSender instanceof Player) {
-            CraftPlayer player = (CraftPlayer) commandSender;
-            player.sendTitle("§bFasterLib", "§fA easy lib for developers");
+            ((Player) commandSender).sendTitle("§bFasterLib", "§fA easy lib for developers");
         }
         Set<Action> actions = new HashSet<>();
         for (GUIAction guiAction : GUIListener.actions.keySet()) {
@@ -52,7 +51,7 @@ public class FasterLibCommand extends Command {
             commandSender.sendMessage(new String[] {
                     "",
             });
-            ((CraftPlayer) commandSender).spigot().sendMessage(new Text("§a[Open-Source License]").
+            ((Player) commandSender).spigot().sendMessage(new Text("§a[Open-Source License]").
                     setHoverEvent(HoverEvent.Action.SHOW_TEXT, "Click here to get the license").setClickEvent(ClickEvent.Action.RUN_COMMAND, "/getLicense").getTextComponent());
         }
         return true;
