@@ -53,6 +53,8 @@ public class FasterLibCommand extends Command {
             });
             ((Player) commandSender).spigot().sendMessage(new Text("§a[Open-Source License]").
                     setHoverEvent(HoverEvent.Action.SHOW_TEXT, "Click here to get the license").setClickEvent(ClickEvent.Action.RUN_COMMAND, "/getLicense").getTextComponent());
+            ((Player) commandSender).spigot().sendMessage(new Text("§a[Github Link]").setClickEvent(ClickEvent.Action.OPEN_URL, "https://github.com/PreferMC/FasterLib")
+                    .setHoverEvent(HoverEvent.Action.SHOW_TEXT, "Click here to open link").getTextComponent());
         }
         return true;
     }

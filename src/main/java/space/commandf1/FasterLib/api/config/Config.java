@@ -6,10 +6,12 @@ import space.commandf1.FasterLib.api.plugin.IPlugin;
 
 import java.io.File;
 import java.io.IOException;
-
+/**
+ * 使用前需要在主类saveResource
+ *
+ * */
 @SuppressWarnings("unused")
 public class Config {
-    private final IPlugin plugin;
     private final File config;
     private YamlConfiguration yaml;
 
@@ -19,7 +21,6 @@ public class Config {
      * */
     public Config(File config) {
         this.config = config;
-        this.plugin = null;
         this.yaml = YamlConfiguration.loadConfiguration(this.config);
     }
 
@@ -30,7 +31,7 @@ public class Config {
      * */
     public Config(String config, Plugin plugin) {
         this.config = new File(plugin.getDataFolder(), config);
-        this.plugin = IPlugin.toIPlugin(plugin);
+        this.yaml = YamlConfiguration.loadConfiguration(this.config);
     }
 
     /**
@@ -40,7 +41,7 @@ public class Config {
      * */
     public Config(String config, IPlugin plugin) {
         this.config = new File(plugin.getPlugin().getDataFolder(), config);
-        this.plugin = plugin;
+        this.yaml = YamlConfiguration.loadConfiguration(this.config);
     }
 
     /**

@@ -6,7 +6,7 @@ import java.awt.*;
 public class Main {
     public static void main(String[] args) {
         Main main = new Main();
-        System.out.println(main.getFormatLogString("This program can only run on a Bukkit/Spigot server", 31, 0));
+        System.out.println("This program can only run on a Bukkit/Spigot server");
         main.loadErrorUI();
     }
 
@@ -28,15 +28,5 @@ public class Main {
         jFrame.setResizable(false);
         jFrame.setLocationRelativeTo(null);
         jFrame.setVisible(true);
-    }
-
-    @SuppressWarnings("all")
-    private String getFormatLogString(String content, int colour, int type) {
-        boolean hasType = type != 1 && type != 3 && type != 4;
-        if (hasType) {
-            return String.format("\033[%dm%s\033[0m", colour, content);
-        } else {
-            return String.format("\033[%d;%dm%s\033[0m", colour, type, content);
-        }
     }
 }
