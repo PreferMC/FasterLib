@@ -293,4 +293,20 @@ public class Main extends JavaPlugin {
 }
 ~~~
 
+**LoggerUtils.java 使用**
+
+~~~java
+import org.bukkit.plugin.java.JavaPlugin;
+import space.commandf1.FasterLib.api.util.utils.LoggerUtils;
+
+public class Main extends JavaPlugin {
+
+    @Override
+    public void onEnable() {
+        LoggerUtils.addHideMessage("MESSAGE");
+        // 添加隐藏消息
+    }
+}
+~~~
+
 ###### 由 PreferMC 强力驱动
