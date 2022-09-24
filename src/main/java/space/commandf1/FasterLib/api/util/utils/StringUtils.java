@@ -4,8 +4,8 @@ import space.commandf1.FasterLib.api.util.Util;
 
 @SuppressWarnings("unused")
 public final class StringUtils extends Util {
-    private StringUtils() {
-        super("StringUtils", false, false);
+    public StringUtils() {
+        super("StringUtils", true, false);
     }
 
     /**

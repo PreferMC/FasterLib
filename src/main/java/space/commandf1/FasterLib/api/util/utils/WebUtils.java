@@ -11,8 +11,8 @@ import java.net.URLConnection;
 @SuppressWarnings("unused")
 public final class WebUtils extends Util {
 
-    private WebUtils() {
-        super("WebUtils", false, false);
+    public WebUtils() {
+        super("WebUtils", true, false);
     }
 
     /**

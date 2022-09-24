@@ -1,12 +1,19 @@
 package space.commandf1.FasterLib.api.plugin;
 
+import com.avaje.ebean.EbeanServer;
 import org.bukkit.Bukkit;
 import org.bukkit.Server;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.Listener;
+import org.bukkit.generator.ChunkGenerator;
 import org.bukkit.plugin.Plugin;
+import org.bukkit.plugin.PluginDescriptionFile;
+import org.bukkit.plugin.PluginLoader;
 import space.commandf1.FasterLib.api.server.IServer;
 
 import java.io.File;
+import java.io.InputStream;
+import java.util.logging.Logger;
 
 @SuppressWarnings("unused")
 public class IPlugin {
@@ -82,7 +89,57 @@ public class IPlugin {
         return this.plugin;
     }
 
+    public File getDataFolder() {
+        return this.plugin.getDataFolder();
+    }
+
+    public PluginDescriptionFile getDescription() {
+        return this.plugin.getDescription();
+    }
+
+    public FileConfiguration getConfig() {
+        return this.plugin.getConfig();
+    }
+
+    public InputStream getResource(String s) {
+        return this.plugin.getResource(s);
+    }
+
+    public PluginLoader getPluginLoader() {
+        return this.plugin.getPluginLoader();
+    }
+
     public Server getServer() {
         return this.plugin.getServer();
     }
+
+    public boolean isEnabled() {
+        return this.plugin.isEnabled();
+    }
+
+    public boolean isNaggable() {
+        return this.plugin.isNaggable();
+    }
+
+    public IPlugin setNaggable(boolean b) {
+        this.plugin.setNaggable(b);
+        return this;
+    }
+
+    public EbeanServer getDatabase() {
+        return this.plugin.getDatabase();
+    }
+
+    public ChunkGenerator getDefaultWorldGenerator(String s, String s1) {
+        return this.plugin.getDefaultWorldGenerator(s, s1);
+    }
+
+    public Logger getLogger() {
+        return this.plugin.getLogger();
+    }
+
+    public String getName() {
+        return this.plugin.getName();
+    }
+
 }

@@ -78,7 +78,9 @@ public abstract class Command implements CommandExecutor, TabCompleter {
             return true;
         }
         if (this.playerOnly && !(commandSender instanceof Player)) {
-            commandSender.sendMessage(noPlayerMessage);
+            if (this.noPlayerMessage != null) {
+                commandSender.sendMessage(noPlayerMessage);
+            }
             return true;
         }
         return onExecute(commandSender, command, label, args);
