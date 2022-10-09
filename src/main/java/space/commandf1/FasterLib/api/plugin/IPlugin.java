@@ -13,10 +13,11 @@ import space.commandf1.FasterLib.api.server.IServer;
 
 import java.io.File;
 import java.io.InputStream;
+import java.io.Serializable;
 import java.util.logging.Logger;
 
 @SuppressWarnings("unused")
-public class IPlugin {
+public class IPlugin implements Serializable {
     private final Plugin plugin;
 
     private IPlugin(Plugin plugin) {

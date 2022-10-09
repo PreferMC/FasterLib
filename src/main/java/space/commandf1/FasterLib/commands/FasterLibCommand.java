@@ -10,10 +10,8 @@ import space.commandf1.FasterLib.api.inventory.action.Action;
 import space.commandf1.FasterLib.api.inventory.action.GUIAction;
 import space.commandf1.FasterLib.api.text.Text;
 import space.commandf1.FasterLib.listeners.GUIListener;
-import space.commandf1.FasterLib.utils.Metrics;
 
-import static space.commandf1.FasterLib.FasterLib.*;
-
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 

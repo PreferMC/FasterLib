@@ -7,8 +7,10 @@ import space.commandf1.FasterLib.api.inventory.action.GUIAction;
 import space.commandf1.FasterLib.api.item.IItemStack;
 import space.commandf1.FasterLib.listeners.GUIListener;
 
+import java.io.Serializable;
+
 @SuppressWarnings("unused")
-public class GUI {
+public class GUI implements Serializable {
     private final Inventory inventory;
 
     public GUI(int size, String title) {

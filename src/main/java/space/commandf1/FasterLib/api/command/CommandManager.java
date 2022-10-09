@@ -20,7 +20,6 @@ public final class CommandManager {
     public static void registerCommand(Command command) {
         PluginCommand cmd = Bukkit.getPluginCommand(command.getCommand());
         cmd.setExecutor(command);
-        cmd.setTabCompleter(command);
     }
 
     /**

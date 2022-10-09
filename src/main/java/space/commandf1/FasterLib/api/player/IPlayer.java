@@ -1,5 +1,6 @@
 package space.commandf1.FasterLib.api.player;
 
+import java.io.Serializable;
 import java.net.InetSocketAddress;
 import java.util.*;
 
@@ -23,7 +24,7 @@ import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.util.Vector;
 
 @SuppressWarnings("unused")
-public class IPlayer {
+public class IPlayer implements Serializable {
     private final Player player;
     
     private IPlayer(Player player) {

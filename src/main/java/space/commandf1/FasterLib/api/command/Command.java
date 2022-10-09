@@ -2,13 +2,12 @@ package space.commandf1.FasterLib.api.command;
 
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 
-import java.util.List;
+import java.io.Serializable;
 
 @SuppressWarnings("unused")
-public abstract class Command implements CommandExecutor, TabCompleter {
+public abstract class Command implements CommandExecutor, Serializable {
     private final String command, description, permission, noPermissionMessage, noPlayerMessage;
     private final boolean playerOnly, isPermissionEquals;
 
@@ -70,7 +69,7 @@ public abstract class Command implements CommandExecutor, TabCompleter {
     }
 
     @Override
-    public boolean onCommand(CommandSender commandSender, org.bukkit.command.Command command, String label, String[] args) {
+    public final boolean onCommand(CommandSender commandSender, org.bukkit.command.Command command, String label, String[] args) {
         if (isPermissionEquals && !commandSender.hasPermission(this.permission)) {
             if (!(noPermissionMessage == null)) {
                 commandSender.sendMessage(this.noPermissionMessage);
@@ -95,10 +94,4 @@ public abstract class Command implements CommandExecutor, TabCompleter {
      * @param args args
      * */
     public abstract boolean onExecute(CommandSender commandSender, org.bukkit.command.Command cmd, String label, String[] args);
-
-
-    @Override
-    public List<String> onTabComplete(CommandSender commandSender, org.bukkit.command.Command command, String s, String[] strings) {
-        return null;
-    }
 }

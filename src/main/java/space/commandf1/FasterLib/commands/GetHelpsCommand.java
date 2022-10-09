@@ -25,7 +25,7 @@ public class GetHelpsCommand extends Command {
                     .setClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/FasterLib Reload").getTextComponent(),
                     pass,
                     new Text("§c[Run]")
-                            .setHoverEvent(HoverEvent.Action.SHOW_TEXT, "Click here to fill command to your text table")
+                            .setHoverEvent(HoverEvent.Action.SHOW_TEXT, "Click here to run command")
                             .setClickEvent(ClickEvent.Action.RUN_COMMAND, "/FasterLib Reload").getTextComponent());
             return true;
         }

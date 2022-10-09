@@ -5,3 +5,5 @@ api-version: 1.8.8
 main: space.commandf1.FasterLib.FasterLib
 version: ${project.version}
 website: https://github.com/PreferMC/FasterLib
+load: STARTUP
+database: false

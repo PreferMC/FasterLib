@@ -22,11 +22,12 @@ import org.bukkit.util.CachedServerIcon;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.Serializable;
 import java.util.*;
 import java.util.logging.Logger;
 
 @SuppressWarnings("unused")
-public class IServer {
+public class IServer implements Serializable {
     private final Server server;
 
     private IServer(Server server) {

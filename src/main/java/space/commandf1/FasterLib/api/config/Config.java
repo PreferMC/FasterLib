@@ -6,12 +6,14 @@ import space.commandf1.FasterLib.api.plugin.IPlugin;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.Serializable;
+
 /**
  * 使用前需要在主类saveResource
  *
  * */
 @SuppressWarnings("unused")
-public class Config {
+public class Config implements Serializable {
     private final File config;
     private YamlConfiguration yaml;
 

@@ -3,8 +3,10 @@ package space.commandf1.FasterLib.api.text;
 
 import net.md_5.bungee.api.chat.*;
 
+import java.io.Serializable;
+
 @SuppressWarnings("unused")
-public class Text {
+public class Text implements Serializable {
     private final TextComponent textComponent;
 
     public Text(String message) {

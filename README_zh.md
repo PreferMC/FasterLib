@@ -158,8 +158,7 @@ public class Main extends JavaPlugin {
 }
 ~~~
 
-**Mysql.java 使用**
-**在1.5版本删除**
+~~**Mysql.java 使用**~~
 
 ~~~java
 import org.bukkit.plugin.java.JavaPlugin;

@@ -7,11 +7,12 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
 
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
 
 @SuppressWarnings("unused")
-public class IItemStack {
+public class IItemStack implements Serializable {
     protected final ItemStack itemStack;
     private final ItemMeta itemMeta;
 
